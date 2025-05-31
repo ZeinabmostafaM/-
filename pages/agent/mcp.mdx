@@ -1,0 +1,124 @@
+# Model Context Protocol (MCP)
+
+import { Callout } from "nextra/components";
+
+<Callout emoji="💡" type="warning">
+  While it's gaining significant support, MCP is still in its early stages. We
+  strongly recommend **thoroughly testing** any MCP integration within the
+  MindPal app first. Be careful when deploying MCP connections in published
+  agents or workflows.
+</Callout>
+
+## What is MCP?
+
+[MCP (Model Context Protocol)](https://modelcontextprotocol.io/) is an open protocol, initiated by Anthropic, that standardizes how AI agents connect with external data, tools, and services.
+
+Think of it like a **USB-C port for your AI agent**. Normally, connecting an AI agent to external tools (like reading data from Google Drive or triggering actions in other apps) requires complex, time-consuming setup, especially if you're not a technical expert.
+
+MCP simplifies this dramatically. Different providers offer **MCP servers**, which act like USB-C hubs packed with specific data or tools. You can "plug" one of these servers into your MindPal agent using just a single URL. Instantly, your agent gains access to everything offered by that server – no complicated configuration needed.
+
+## Why use MCP?
+
+MCP offers several key benefits:
+
+- **Simple Integration**: Connect your AI agents to external tools with just a URL, eliminating complex coding or setup.
+- **Enhanced Capabilities**: Give your agents access to a much wider range of data and functionality from external sources.
+- **Streamlined Workflows**: Build more powerful and efficient automated processes by letting agents interact with other apps and services.
+- **Better Context**: Allow agents to understand and work with your specific data and tools more effectively.
+
+Given MCP's transformative potential, MindPal proudly leads as the **first no-code AI agent platform** to integrate this technology, democratizing access to these advanced capabilities for all users.
+
+## MCP Support in MindPal
+
+It's important to know what MindPal currently supports regarding MCP:
+
+- **Tools Only**: An MCP server can potentially offer various things like Resources, Prompts, or Sampling Routes. Right now, MindPal only supports **Tools** provided by MCP servers.
+- **SSE Servers Only**: MCP servers can operate in different ways. MindPal supports **SSE (Server-Sent Events)** servers, which are suitable for cloud-based applications like ours. We do not support STDIO servers, which are typically used for local integrations.
+
+## How to configure MCP in MindPal
+
+Setting up an MCP connection in MindPal is straightforward:
+
+1.  **Find an SSE MCP Server**: Locate a server that provides the tools your agent needs. See the list below for some compatible options.
+2.  **Navigate to Agent Settings**: Go to the settings page for the AI agent you want to configure.
+3.  **Go to the MCP Section**: Find the section dedicated to MCP connections.
+4.  **Add Server**: Click on "Add new SSE MCP server".
+5.  **Enter Details**: Paste your MCP server URL and give the connection a recognizable name.
+6.  **Save & Test**: Save the configuration. MindPal will automatically test the connection to verify that the server is reachable and configured correctly, and to retrieve the list of available tools.
+
+That's it! Your AI agent is now ready to use the tools provided by the connected MCP server. It really just takes a URL.
+
+## Proven Compatible MCP Servers
+
+Below are some of the most popular and proven compatible SSE MCP servers you can use with MindPal. Each offers unique capabilities and setup flows. Pick the one that fits your workflow best.
+
+#### [Zapier MCP](https://zapier.com/mcp)
+
+- **Offers:** Access to 7,000+ apps with fine-grained control over individual actions
+- **Access:** Sign up, create your MCP server, add desired actions, use your unique server URL
+
+<iframe
+  width="100%"
+  height="400"
+  src="https://www.youtube.com/embed/KgGNbsKzKHk"
+  title="MindPal x Zapier MCP"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+></iframe>
+
+#### [Make MCP](https://developers.make.com/mcp-server)
+
+- **Offers:** Turn existing "On Demand" Make Scenarios into tools for AI with bidirectional communication
+- **Access:** Create account, set up Scenarios as "On Demand," generate MCP token in Profile page
+
+<iframe
+  width="100%"
+  height="400"
+  src="https://www.youtube.com/embed/GskAd_P5Sgc"
+  title="MindPal x Make MCP"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+></iframe>
+
+#### [Composio MCP](https://mcp.composio.dev)
+
+- **Offers:** Multiple server endpoints, each connecting to specific applications with built-in authentication
+- **Access:** Create an account, select the applications you want to connect, and receive dedicated MCP server URLs for each integration
+
+<iframe
+  width="100%"
+  height="400"
+  src="https://www.youtube.com/embed/fM-n2CC8JWU"
+  title="MindPal x Composio MCP"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+></iframe>
+
+#### [Activepieces MCP](https://www.activepieces.com/docs/ai/mcp)
+
+- **Offers:** Turn "Pieces" (single actions) and "Flows" (multi-step workflows) into MCP tools, with configurable inputs and outputs for MCP tools
+- **Access:** Use their cloud service or self-host. Go to AI → MCP in your Activepieces Dashboard, start connecting the tools that you want to give AI access to, use your unique server URL
+
+#### [Pipedream MCP](https://mcp.pipedream.com/)
+
+- **Offers:** Access to 2,500+ APIs and 10,000+ integration tools, with dedicated endpoints for each connected service
+- **Access:** Create an account, choose your desired integrations, and receive a unique server URL for each of your integrations
+
+#### [n8n MCP Server](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-langchain.mcptrigger/)
+
+- **Offers:** Turns n8n workflows into MCP tools, allowing AI applications to access n8n's automation capabilities and integration with hundreds of services
+- **Access:** Set up the MCP Server Trigger node in your n8n workflow, configure authentication, and use the generated MCP URL to connect
+
+#### [Supermachine Public MCP Servers](https://supermachine.ai/public-mcp-servers)
+
+- **Offers:** Access to 3939+ public MCP servers by spinning up virtual machines that run these MCP servers with minimal configuration
+- **Access:** Search and spin up remote MCPs through the Supermachine platform, then use them in your AI applications
+
+We will continuously test and add more compatible MCP servers to this list as they become available.
+
+## Learn more about MCP
+
+For a deeper understanding of MCP and its potential, check out Anthropic's resources or our blog post: [Model Context Protocol Explained: AI for Everyone](https://mindpal.space/blog/model-context-protocol-explained-ai-for-everyone)

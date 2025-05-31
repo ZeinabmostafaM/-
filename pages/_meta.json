@@ -1,0 +1,20 @@
+{
+  "index": "Quick Start",
+  "agent": "Agent",
+  "workflow": "Multi-Agent Workflow",
+  "workspace": "Workspace Management",
+  "affiliate": "Affiliate",
+  "guides": "Guides",
+  "about": {
+    "title": "Home",
+    "type": "page",
+    "href": "https://mindpal.space",
+    "newWindow": true
+  },
+  "contact": {
+    "title": "Contact ↗",
+    "type": "page",
+    "href": "mailto:support@mindpal.io",
+    "newWindow": true
+  }
+}

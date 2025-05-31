@@ -1,0 +1,1 @@
+# MindPal's Official Documentation
